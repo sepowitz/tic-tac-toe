@@ -51,3 +51,16 @@ function togglePlayerHover() {
 		($(cells[i])).toggleClass('even-hover');
 	}
 }
+
+
+
+var setHandlers = {
+	select: function(player) {
+		($(cells)).on('click', function(e) {
+			$(this).attr('class', player.type + '-select');
+		})
+	}
+
+
+
+}
