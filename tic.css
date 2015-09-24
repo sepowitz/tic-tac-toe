@@ -100,30 +100,30 @@ footer h1 {
 
 /*** INTERACTION STYLES ***/
 
-.one-hover {
+
+.odd-hover {
 	transition: 1s;
 }
 
-.one-hover:hover {
-	background: rgba(113, 197, 255, .7);	
-}
-
-.one-select {
-	background: rgba(113, 197, 255, 1);	
-}
-
-.two-hover {
-	transition: 1s;
-}
-
-.two-hover:hover {
+.odd-hover:hover {
 	background: rgba(255, 137, 65, .7);	
 }
 
-.two-select {
+.odd-select {
 	background: rgba(255, 137, 65, 1);	
 }
 
+.even-hover {
+	transition: 1s;
+}
+
+.even-hover:hover {
+	background: rgba(113, 197, 255, .7);	
+}
+
+.even-select {
+	background: rgba(113, 197, 255, 1);	
+}
 
 
 

@@ -28,3 +28,26 @@
 //Handlers for each cell
 
 
+
+/* This toggles the hover style of the TTT board cells
+   based on player turn. This should be run everytime 
+   an event handler fires to ensure the next players color
+   is activated 
+*/
+
+function Player() {
+	this.games =  0;
+}
+
+var playerOne = {
+	type: 'even'
+
+}
+
+var cells = $('li');
+
+function togglePlayerHover() {
+	for(var i = 0; i < cells.length; i++) {
+		($(cells[i])).toggleClass('even-hover');
+	}
+}
