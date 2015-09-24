@@ -1,2 +1,11 @@
-# tic-tac-toe
-A tic tac toe game built in HTML5, CSS, Javascript, jQuery
+# A modernized tic tac toe game built in HTML5, CSS, Javascript, jQuery
+
+###Summary:
+
+
+
+## Styling:
+
+
+
+## Attributions:
