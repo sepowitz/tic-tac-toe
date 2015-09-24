@@ -1,8 +1,12 @@
+/*** RESET ***/
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+/*** GENERAL STYLING ***/
 
 html {
 	height: 100%;
@@ -11,6 +15,8 @@ body {
 	background: #f2f2f2;
 	text-align: center;
 }
+
+/*** BOARD STYLING ***/
 
 main {
 	position: relative;
@@ -25,13 +31,21 @@ ul {
 }
 
 li {
-	border: solid 1px black;
 	height: 150px;
 	width: 150px;
 	display: inline-block;
 	border-radius: 2px;
 	margin: 0;
+	box-shadow: inset 0px -2px 2px rgba(0,0,0,0.5), /*bottom internal shadow*/
+	inset 0px 2px 2px rgba(255,255,255,0.8); /*top internal highlight*/
 }
+
+li:hover {
+	box-shadow: inset 0px -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
+	inset 0px 1px 1px rgba(255,255,255,0.8); /*top internal highlight*/
+}
+
+/*** PLAYER SCOREBOARD STYLING ***/
 
 section {
 	position: relative;
@@ -42,8 +56,24 @@ section {
 #player-one-score, #player-two-score {
 	display: inline-block;
 	width: 40%;
-	border: solid 1px black;
 }
+
+#player-one-score h4 {
+	color: rgba(113, 197, 255, .7);
+}
+
+#player-one-score p {
+	color: rgba(113, 197, 255, 1);
+}
+
+#player-two-score h4 {
+	color: rgba(255, 137, 65, .7);
+}
+
+#player-two-score p {
+	color: rgba(255, 137, 65, 1);
+}
+
 
 h4 {
 	font-family:'Vollkorn', serif;
@@ -54,6 +84,9 @@ p {
 	font-family: 'Unica One', sans-serif;
 	font-size: 2em;
 }
+
+
+/*** FOOTER STYLING ***/
 
 footer {
 	position: absolute;
@@ -67,4 +100,34 @@ footer h1 {
 	text-transform: uppercase;
 	color: #fff;
 }
+
+/*** INTERACTION STYLES ***/
+
+.one-hover {
+	transition: 1s;
+}
+
+.one-hover:hover {
+	background: rgba(113, 197, 255, .7);	
+}
+
+.one-select {
+	background: rgba(113, 197, 255, 1);	
+}
+
+.two-hover {
+	transition: 1s;
+}
+
+.two-hover:hover {
+	background: rgba(255, 137, 65, .7);	
+}
+
+.two-select {
+	background: rgba(255, 137, 65, 1);	
+}
+
+
+
+
 
