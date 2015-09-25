@@ -40,6 +40,7 @@
 
 game = {
 	cells: $('li'),
+
 	setCombos: function () {
 		this.combos = [
 			[ this.cells[0], this.cells[1], this.cells[2] ],
@@ -49,68 +50,49 @@ game = {
 			[ this.cells[1], this.cells[4], this.cells[7] ],
 			[ this.cells[2], this.cells[5], this.cells[8] ],
 			[ this.cells[0], this.cells[4], this.cells[8] ],
-			[ this.cells[2], this.cells[4], this.cells[6] ]
+			[ this.cells[2], this.cells[4], this.cells[6] ],
 
 	 	]
 	},
-	winningCombo: function() {
-	for(var c = 0, i = 0 ; c < game.combos.length, i < game.combos[c].length; c++, i++ ) {
-	$(game.combos[0][i]).hasClass('even-select');
-}
+	getWinner: function() {
+		for(var i = 0; i < game.combos.length; i++){
+    			if($(this.combos[i][0]).hasClass('even-select') && $(this.combos[i][1]).hasClass('even-select') && $(this.combos[i][2]).hasClass('even-select')) {
+    				console.log('even-wins')
+    			} else if($(this.combos[i][0]).hasClass('odd-select') && $(this.combos[i][1]).hasClass('odd-select') && $(this.combos[i][2]).hasClass('odd-select')) {
+    				console.log('odd-wins')
+    			}
+
+    		}
 
 	},
 	setHandlers: function() {
 		($(this.cells)).on('click', function(e) {
 			var board = $('#board');
+			console.log(this);
 			if(board.hasClass('even-hover')) {
 				$(this).addClass('selected even-select')
 
 				board.removeClass('even-hover');
-				board.addClass('odd-hover')
+				board.addClass('odd-hover');
+				game.getWinner();
 				
-				// togglePlayerHover();
 			} else {
 				$(this).addClass('selected odd-select')
 
 				board.removeClass('odd-hover');
 				board.addClass('even-hover');
-
-				// togglePlayerHover();
+				game.getWinner();
 			}
 		})
+	},
+	renderWin: function() {
+
 	}
 }
 
+var playerOneScore = $('#player-one-score');
 
-function Player(type) {
-	this.type = type;
-	this.games =  0;
-}
-
-Player.prototype.win = function() {
-	this.games += 1;
-}
-
-
-var playerOne = new Player('even') 
-
-var playerTwo = new Player('odd') 
-
-
-
-// function togglePlayerHover() {
-// 	for(var i = 0; i < game.cells.length; i++) {
-// 		($(game.cells[i])).toggleClass('even-hover');
-// 	}
-// }
-
-var renderWin = function() {
-	var count = $('')
-}
-
-
-
-game.setCombos();
 
 game.setHandlers();
+game.setCombos();
 
