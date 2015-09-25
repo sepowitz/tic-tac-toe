@@ -93,12 +93,11 @@ footer h1 {
 
 /*** INTERACTION STYLES ***/
 
-
-.odd-hover {
+#board li {
 	transition: 1s;
 }
 
-.odd-hover:hover {
+.odd-hover li:not(.selected):hover {
 	background: rgba(255, 137, 65, .7);	
 }
 
@@ -106,11 +105,7 @@ footer h1 {
 	background: rgba(255, 137, 65, 1);	
 }
 
-.even-hover {
-	transition: 1s;
-}
-
-.even-hover:hover {
+.even-hover li:not(.selected):hover {
 	background: rgba(113, 197, 255, .7);	
 }
 
