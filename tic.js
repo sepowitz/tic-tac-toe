@@ -35,14 +35,22 @@
    is activated 
 */
 
-function Player() {
+function Player(type) {
+	this.type = type;
 	this.games =  0;
 }
 
-var playerOne = {
-	type: 'even'
-
+Player.prototype.win = function() {
+	this.games += 1;
 }
+
+
+var playerOne = new Player('even') 
+
+var playerTwo = new Player('odd') 
+
+
+
 
 var cells = $('li');
 
@@ -52,7 +60,9 @@ function togglePlayerHover() {
 	}
 }
 
-
+var renderWin = function() {
+	var count = $('')
+}
 
 var setHandlers = {
 	select: function(player) {
