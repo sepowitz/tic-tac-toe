@@ -58,7 +58,11 @@ game = {
 		for(var i = 0; i < game.combos.length; i++){
     			if($(this.combos[i][0]).hasClass('even-select') && $(this.combos[i][1]).hasClass('even-select') && $(this.combos[i][2]).hasClass('even-select')) {
     				console.log('even-wins')
+    				playerOne.win();
+    				playerOne.setScore();
     			} else if($(this.combos[i][0]).hasClass('odd-select') && $(this.combos[i][1]).hasClass('odd-select') && $(this.combos[i][2]).hasClass('odd-select')) {
+    				playerTwo.win();
+    				playerTwo.setScore();
     				console.log('odd-wins')
     			}
 
@@ -68,7 +72,6 @@ game = {
 	setHandlers: function() {
 		($(this.cells)).on('click', function(e) {
 			var board = $('#board');
-			console.log(this);
 			if(board.hasClass('even-hover')) {
 				$(this).addClass('selected even-select')
 
@@ -90,9 +93,34 @@ game = {
 	}
 }
 
-var playerOneScore = $('#player-one-score');
+playerOne = {
+	score: 0, 
+	scoreBoard: $('#player-one-score p'),
+	win: function() {
+		this.score += 1;
+	},
+	setScore: function() {
+		this.scoreBoard.text(playerOne.score);
+	}
+}
+
+playerTwo = {
+	score: 0, 
+	scoreBoard: $('#player-two-score p'),
+	win: function() {
+		this.score += 1;
+	},
+	setScore: function() {
+		this.scoreBoard.text(playerTwo.score);
+	},
+	renderScore: function() {
+		
+	}
+}
 
 
 game.setHandlers();
 game.setCombos();
+playerOne.setScore();
+playerTwo.setScore();
 
