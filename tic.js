@@ -28,16 +28,6 @@
 //Handlers for each cell
 
 
-
-/* This toggles the hover style of the TTT board cells
-   based on player turn. This should be run everytime 
-   an event handler fires to ensure the next players color
-   is activated 
-*/
-
-
-
-
 game = {
 	cells: $('li'),
 
@@ -55,19 +45,37 @@ game = {
 	 	]
 	},
 	getWinner: function() {
-		for(var i = 0; i < game.combos.length; i++){
-    			if($(this.combos[i][0]).hasClass('even-select') && $(this.combos[i][1]).hasClass('even-select') && $(this.combos[i][2]).hasClass('even-select')) {
+		for(var i = 0; i < game.combos.length; i++) {
+    			if ($(this.combos[i][0]).hasClass('even-select') &&
+    				$(this.combos[i][1]).hasClass('even-select') &&
+    				$(this.combos[i][2]).hasClass('even-select')) {
     				console.log('even-wins')
     				playerOne.win();
-    				playerOne.setScore();
-    			} else if($(this.combos[i][0]).hasClass('odd-select') && $(this.combos[i][1]).hasClass('odd-select') && $(this.combos[i][2]).hasClass('odd-select')) {
-    				playerTwo.win();
-    				playerTwo.setScore();
+    				return playerOne.setScore();
+    			} else if ($(this.combos[i][0]).hasClass('odd-select') &&
+    					   $(this.combos[i][1]).hasClass('odd-select') && 
+    					   $(this.combos[i][2]).hasClass('odd-select')) {
     				console.log('odd-wins')
+    				 playerTwo.win();
+    				 return playerTwo.setScore();
+    			} else if ($(this.cells[0]).hasClass('selected') &&
+    			 		   $(this.cells[1]).hasClass('selected') &&  
+    			 		   $(this.cells[2]).hasClass('selected') &&
+    			 		   $(this.cells[3]).hasClass('selected') &&
+    			 		   $(this.cells[4]).hasClass('selected') &&
+    			 		   $(this.cells[5]).hasClass('selected') &&
+    			 		   $(this.cells[6]).hasClass('selected') &&
+    			 		   $(this.cells[7]).hasClass('selected') &&
+    			 		   $(this.cells[8]).hasClass('selected')) {
+    				console.log('its a tie');
     			}
-
     		}
 
+	},
+	resetBoard: function() {
+		$(this.cells).removeClass();
+		$('#player-two-score span').hide();
+		$('#player-one-score span').hide();
 	},
 	setHandlers: function() {
 		($(this.cells)).on('click', function(e) {
@@ -95,6 +103,7 @@ game = {
 
 playerOne = {
 	score: 0, 
+	scoreBoardDiv: $('#player-one-score'),
 	scoreBoard: $('#player-one-score p'),
 	win: function() {
 		this.score += 1;
@@ -106,15 +115,13 @@ playerOne = {
 
 playerTwo = {
 	score: 0, 
+	scoreBoardDiv: $('#player-two-score'),
 	scoreBoard: $('#player-two-score p'),
 	win: function() {
 		this.score += 1;
 	},
 	setScore: function() {
 		this.scoreBoard.text(playerTwo.score);
-	},
-	renderScore: function() {
-		
 	}
 }
 

@@ -22,6 +22,8 @@ body {
 main {
 	width: 100%;
 	margin-top: 5%;
+	padding-top: 1%;
+	padding-bottom: 1%;
 }
 
 ul {
@@ -93,9 +95,28 @@ footer h1 {
 
 /*** INTERACTION STYLES ***/
 
-#board li {
+.bump-two li {
 	transition: 1s;
+	-webkit-animation: bump-two 2s ease-in-out;
 }
+
+@-webkit-keyframes bump-two {
+	50%  { width: 160px; height: 160px; background: rgba(255, 137, 65, 1); }
+	70%  { width: 150px; height: 150px; }
+
+}
+
+.bump-one li {
+	transition: 1s;
+	-webkit-animation: bump-one 2s ease-in-out;
+}
+
+@-webkit-keyframes bump-one {
+	50%  { width: 160px; height: 160px; background: rgba(113, 197, 255, 1); }
+	70%  { width: 150px; height: 150px; }
+
+}
+
 
 .odd-hover li:not(.selected):hover {
 	background: rgba(255, 137, 65, .7);	
@@ -112,6 +133,13 @@ footer h1 {
 .even-select {
 	background: rgba(113, 197, 255, 1);	
 }
+
+
+
+/*main {
+	background: rgba(255, 137, 65, 1);
+}*/
+
 
 
 
