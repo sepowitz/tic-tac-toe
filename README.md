@@ -9,6 +9,7 @@
 
 ### Planning:
 
+![Tic-tac-toe mockup](https://github.com/sepowitz/tic-tac-toe/blob/gh-pages/tic-mockup.png)
 
 #### Future Consideration:
 
