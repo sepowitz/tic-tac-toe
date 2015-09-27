@@ -49,14 +49,18 @@ game = {
     			if ($(this.combos[i][0]).hasClass('even-select') &&
     				$(this.combos[i][1]).hasClass('even-select') &&
     				$(this.combos[i][2]).hasClass('even-select')) {
-    				console.log('even-wins')
+    				console.log('even-wins');
     				playerOne.win();
+    				playerOne.winAnimation();
+    				game.resetBoard();
     				return playerOne.setScore();
     			} else if ($(this.combos[i][0]).hasClass('odd-select') &&
     					   $(this.combos[i][1]).hasClass('odd-select') && 
     					   $(this.combos[i][2]).hasClass('odd-select')) {
     				console.log('odd-wins')
     				 playerTwo.win();
+    				 playerTwo.winAnimation();
+    				 game.resetBoard();
     				 return playerTwo.setScore();
     			} else if ($(this.cells[0]).hasClass('selected') &&
     			 		   $(this.cells[1]).hasClass('selected') &&  
@@ -68,6 +72,7 @@ game = {
     			 		   $(this.cells[7]).hasClass('selected') &&
     			 		   $(this.cells[8]).hasClass('selected')) {
     				console.log('its a tie');
+    				return game.resetBoard();
     			}
     		}
 
@@ -107,6 +112,17 @@ playerOne = {
 	win: function() {
 		this.score += 1;
 	},
+	winAnimation: function() {
+		$('#point-one').animate({
+			opacity: 1,
+			top: '-=5'
+		}, 500, function() {
+			$('#point-one').animate({
+				opacity: 0,
+				top: '+=5'
+			}, 300)
+		})
+	},
 	setScore: function() {
 		this.scoreBoard.text(playerOne.score);
 	},
@@ -128,6 +144,17 @@ playerTwo = {
 	playerTwoInput: $('#player-two-input'),
 	win: function() {
 		this.score += 1;
+	},
+	winAnimation: function() {
+		$('#point-two').animate({
+			opacity: 1,
+			top: '-=5',
+		}, 500, function() {
+			$('#point-two').animate({
+				opacity: 0,
+				top: '+=5',
+			}, 300)
+		})
 	},
 	setScore: function() {
 		this.scoreBoard.text(playerTwo.score);

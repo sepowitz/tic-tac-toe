@@ -89,6 +89,7 @@ input {
 	border: none;
 	border-bottom: solid 1px #d3d3d3;
 	font-family: 'Unica One', serif;
+	text-align: center;
 }
 
 #player-one-input:focus {
@@ -155,6 +156,27 @@ footer h1 {
 	background: rgba(113, 197, 255, 1);	
 }
 
+#point-one {
+	position: absolute;
+	left: 20%;
+	top: 70%;
+	border: solid 2px white;
+	padding: 1em;
+	border-radius: 100px;
+	color: rgba(113, 197, 255, 1);
+	opacity: 0;
+}
+
+#point-two {
+	position: absolute;
+	left: 75%;
+	top: 70%;
+	border: solid 2px white;
+	padding: 1em;
+	border-radius: 100px;
+	color: rgba(255, 137, 65, 1);
+	opacity: 0;
+}
 
 
 /*main {
