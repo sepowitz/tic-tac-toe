@@ -1,4 +1,4 @@
-# A modernized tic tac toe game built in HTML5, CSS, Javascript, jQuery
+# A modern tic-tac-toe game built in HTML5, CSS, Javascript/jQuery
 
 ###Summary:
 
