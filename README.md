@@ -1,11 +1,14 @@
 # A modern tic-tac-toe game built in HTML5, CSS, Javascript/jQuery
 
-###Summary:
+##Summary:
 
 
 
-## Styling:
+### Styling:
 
 
+### Planning:
 
-## Attributions:
+
+#### Future Consideration:
+
