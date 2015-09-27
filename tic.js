@@ -6,28 +6,6 @@
 //This is could use an odd/even sequence, when the number is odd = Player one and vice versa
 
 
-
-
-
-
-//Player One Model
-//Player One View
-
-
-
-//Player Two Model
-//Player Two View
-
-
-
-
-//Board Model
-//Board View 
-
-
-//Handlers for each cell
-
-
 game = {
 	cells: $('li'),
 
@@ -187,8 +165,10 @@ playerTwo = {
 
 playerTwo.addName();
 playerOne.addName();
+
 game.setHandlers();
 game.setCombos();
+
 playerOne.setScore();
 playerTwo.setScore();
 
