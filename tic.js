@@ -74,8 +74,6 @@ game = {
 	},
 	resetBoard: function() {
 		$(this.cells).removeClass();
-		$('#player-two-score span').hide();
-		$('#player-one-score span').hide();
 	},
 	setHandlers: function() {
 		($(this.cells)).on('click', function(e) {
@@ -105,11 +103,21 @@ playerOne = {
 	score: 0, 
 	scoreBoardDiv: $('#player-one-score'),
 	scoreBoard: $('#player-one-score p'),
+	playerOneInput: $('#player-one-input'),
 	win: function() {
 		this.score += 1;
 	},
 	setScore: function() {
 		this.scoreBoard.text(playerOne.score);
+	},
+	addName: function() {
+		var that = this;
+		this.playerOneInput.on('keypress', function(e) {
+				if(e.keyCode === 13) {
+					that.scoreBoardDiv.append('<span>' + $(this).val() + '</span>')
+					that.playerOneInput.hide();
+				}
+		})
 	}
 }
 
@@ -117,15 +125,26 @@ playerTwo = {
 	score: 0, 
 	scoreBoardDiv: $('#player-two-score'),
 	scoreBoard: $('#player-two-score p'),
+	playerTwoInput: $('#player-two-input'),
 	win: function() {
 		this.score += 1;
 	},
 	setScore: function() {
 		this.scoreBoard.text(playerTwo.score);
+	},
+	addName: function() {
+		var that = this;
+		this.playerTwoInput.on('keypress', function(e) {
+				if(e.keyCode === 13) {
+					that.scoreBoardDiv.append('<span>' + $(this).val() + '</span>')
+					that.playerTwoInput.hide();
+				}
+		})
 	}
 }
 
-
+playerTwo.addName();
+playerOne.addName();
 game.setHandlers();
 game.setCombos();
 playerOne.setScore();

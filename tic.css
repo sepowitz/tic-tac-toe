@@ -59,16 +59,20 @@ section {
 	width: 40%;
 }
 
-#player-one-score h4 {
+#player-one-score span {
 	color: rgba(113, 197, 255, .7);
+	text-transform: uppercase;
+	font-family: 'Unica One', sans-serif;
 }
 
 #player-one-score p {
 	color: rgba(113, 197, 255, 1);
 }
 
-#player-two-score h4 {
+#player-two-score span {
 	color: rgba(255, 137, 65, .7);
+	text-transform: uppercase;
+	font-family: 'Unica One', sans-serif;
 }
 
 #player-two-score p {
@@ -78,6 +82,23 @@ section {
 p {
 	font-family: 'Unica One', sans-serif;
 	font-size: 2em;
+}
+
+input {
+	background: none;
+	border: none;
+	border-bottom: solid 1px #d3d3d3;
+	font-family: 'Unica One', serif;
+}
+
+#player-one-input:focus {
+	outline: none;
+	color: rgba(113, 197, 255, 1);
+}
+
+#player-two-input:focus {
+	outline: none;
+	color: rgba(255, 137, 65, 1);
 }
 
 
