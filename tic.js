@@ -72,6 +72,21 @@ game = {
     			 		   $(this.cells[7]).hasClass('selected') &&
     			 		   $(this.cells[8]).hasClass('selected')) {
     				console.log('its a tie');
+    				$(function(){
+    					$('#tie').animate({
+    						opacity: 1,
+    						top: '-=2'
+    					}, 500, function() {
+    						$('#tie').animate({
+    							top: '+=1'
+    						}, 200, function() {
+    							$('#tie').animate({
+    								opacity: 0,
+    								top: '+=1'
+    							}, 200)
+    						})
+    					})
+    				})
     				return game.resetBoard();
     			}
     		}
