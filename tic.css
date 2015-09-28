@@ -88,18 +88,27 @@ input {
 	background: none;
 	border: none;
 	border-bottom: solid 1px #d3d3d3;
+	border-radius: 5px;
 	font-family: 'Unica One', serif;
 	text-align: center;
+	font-size: .8em;
 }
 
 #player-one-input:focus {
 	outline: none;
 	color: rgba(113, 197, 255, 1);
+	font-size: 1em;
 }
+
+-webkit-input-placeholder {
+	color: white;
+}
+
 
 #player-two-input:focus {
 	outline: none;
 	color: rgba(255, 137, 65, 1);
+	font-size: 1em;
 }
 
 
