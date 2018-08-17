@@ -1,6 +1,6 @@
 # A modern tic-tac-toe game built in HTML5, CSS, Javascript/jQuery
 
-##Summary:
+## Summary:
 This game was built using semantic HTML5, CSS3, Javascript and jQuery. The objective was to design and develop a modernized version of the standard tic-tac-toe game, using minimalist design and subtle animation to make for what I hope will provide a delightful user experience. 
 
 
@@ -14,7 +14,7 @@ Here is some of the initial design and documentation that went into building the
 ![Tic-tac-toe sketch](https://github.com/sepowitz/tic-tac-toe/blob/gh-pages/tic-sketch-1.jpg)
 
 #### Future Consideration:
-For duture iterations I'm hoping to refactor some of the code, possibly coupling the player objects using contructor functions. I would also like to allow users to be able to choose their color in the future, and possibly add some more animation to make for a more dynamic experience. 
+For future iterations I'm hoping to refactor some of the code, possibly coupling the player objects using contructor functions. I would also like to allow users to be able to choose their color in the future, and possibly add some more animation to make for a more dynamic experience. 
 
 ####
 I hope you enjoy
